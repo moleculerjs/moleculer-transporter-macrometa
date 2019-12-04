@@ -1,0 +1,58 @@
+{
+  "name": "moleculer-transporter-macrometa",
+  "version": "0.0.0",
+  "description": "MacroMeta stream transporter for Moleculer microservices framework",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon examples/index.js",
+    "ci": "jest --watch",
+    "test": "jest --coverage",
+    "lint": "eslint --ext=.js src test",
+    "deps": "npm-check -u",
+    "readme": "node node_modules/moleculer-docgen/index.js -t README.md src/index.js",
+    "coverall": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "keywords": [
+    "microservice",
+    "moleculer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:moleculerjs/moleculer-transporter-macrometa.git"
+  },
+  "homepage": "https://github.com/moleculerjs/moleculer-transporter-macrometa#readme",
+  "author": "MoleculerJS",
+  "license": "MIT",
+  "peerDependencies": {
+    "moleculer": "^0.14.0"
+  },
+  "devDependencies": {
+    "benchmarkify": "^2.1.2",
+    "coveralls": "^3.0.9",
+    "eslint": "^6.7.2",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
+    "kleur": "^3.0.3",
+    "lolex": "^5.1.1",
+    "moleculer": "^0.14.0-beta6",
+    "moleculer-docgen": "^0.2.2",
+    "moleculer-repl": "^0.6.1",
+    "nodemon": "^2.0.1",
+    "npm-check": "^5.9.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/services/"
+    ]
+  },
+  "engines": {
+    "node": ">= 6.x.x"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "jsc8": "^0.14.2",
+    "lodash": "^4.17.15"
+  }
+}
