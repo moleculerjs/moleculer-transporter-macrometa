@@ -13,7 +13,25 @@ $ npm install moleculer-transporter-macrometa --save
 ```
 
 # Usage
+```js
+const { ServiceBroker } 	= require("moleculer");
+const MacroMetaTransporter  = require("../../");
 
+// Create broker
+const broker = new ServiceBroker({
+    logger: true,
+    transporter: new MacroMetaTransporter({
+        config: "https://gdn1.macrometa.io",
+
+        auth: {
+            email: process.env.FABRIC_EMAIL,
+            password: process.env.FABRIC_PASS
+        },
+
+        localStreams: true
+    })
+});
+```
 
 # Settings
 
