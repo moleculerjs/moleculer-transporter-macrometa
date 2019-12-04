@@ -18,7 +18,23 @@ const broker = new ServiceBroker({
 		},
 
 		localStreams: true
-	})
+	}),
+
+	metrics: {
+		enabled: true,
+
+		reporter: [
+			{
+				type: "Console",
+				options: {
+					interval: 5,
+					colors: true,
+					onlyChanges: true,
+					includes: ["moleculer.request.time"]
+				}
+			}
+		]
+	}
 });
 
 let reqCount = 0;
