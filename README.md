@@ -15,11 +15,11 @@ $ npm install moleculer-transporter-macrometa --save
 # Usage
 ```js
 // moleculer.config.js
-const MacroMetaTransporter  = require("moleculer-transporter-macrometa");
+const MacroMetaTransporter = require("moleculer-transporter-macrometa");
 
 module.exports = {
     logger: true,
-    
+
     transporter: new MacroMetaTransporter({
         config: "https://gdn1.macrometa.io",
 
