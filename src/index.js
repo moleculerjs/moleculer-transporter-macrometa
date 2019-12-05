@@ -16,11 +16,11 @@ class MacrometaTransporter extends BaseTransporter {
 	constructor(opts) {
 		super(opts);
 
-		this.opts = _.defaultsDeep({
+		this.opts = _.defaultsDeep(this.opts, {
 			config: "https://gdn1.macrometa.io",
 			auth: {},
 			localStreams: false
-		}, this.opts);
+		});
 
 		this.streams = {};
 	}
@@ -45,7 +45,7 @@ class MacrometaTransporter extends BaseTransporter {
 		 */
 		this.fabric = new FabricClient(this.opts.config);
 
-		this.logger.info(`Logging in with '${this.opts.auth.email}'...`);
+		this.logger.info(`Logging in with '${this.opts.auth.email}'...`, this.opts.config);
 		await this.fabric.login(this.opts.auth.email, this.opts.auth.password);
 		this.logger.info("Logged in.");
 

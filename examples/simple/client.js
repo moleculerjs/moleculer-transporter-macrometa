@@ -10,14 +10,14 @@ const kleur = require("kleur");
 const broker = new ServiceBroker({
 	nodeID: process.argv[2] || "client-" + process.pid,
 	transporter: new MacroMetaTransporter({
-		config: "https://gdn1.macrometa.io",
+		config: process.env.FABRIC_URL || "https://gdn1.macrometa.io",
 
 		auth: {
 			email: process.env.FABRIC_EMAIL,
 			password: process.env.FABRIC_PASS
 		},
 
-		localStreams: true
+		localStreams: false
 	}),
 
 	metrics: {
